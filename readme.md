@@ -31,8 +31,6 @@ A Laravel-based web application that allows multiple cafés to manage and displa
 - **Database**: MySQL / PostgreSQL
 - **QR Code**: [Simple QrCode package](https://github.com/SimpleSoftwareIO/simple-qrcode)
 
----
 
-## 📂 Project Structure
 
 
