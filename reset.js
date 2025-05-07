@@ -21,12 +21,19 @@ window.addEventListener('DOMContentLoaded', () => {
   
         setTimeout(() => {
             form.reset();
-          }, 2000);
+            messageBox.textContent = '';
+          }, 3000);
   
         
       } else {
         messageBox.textContent = '❌ Please enter a valid email address.';
-        messageBox.style.color = '#006400';
+        messageBox.style.color = '#B00020';
+
+        setTimeout(() => {
+          form.reset();
+          messageBox.textContent = '';
+        }, 3000);
+
       }
     });
   });
