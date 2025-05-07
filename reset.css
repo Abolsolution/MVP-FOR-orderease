@@ -1,0 +1,106 @@
+body{
+    background: linear-gradient(90deg, #2A7B9B 0%, #57C785 50%, #EDDD53 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    margin: 0;
+}
+
+
+.container{
+    display: flex;
+    width: 90%;
+    max-width: 325px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 32px;
+    font-family: "Open Sans";
+}
+
+.title{
+    text-align: center; 
+}
+.container p{
+    margin: 10px 0;
+}
+.form-class label{
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.container input{
+    text-align: left;
+    padding:10px 10px 10px 35px;
+    font-size: 16px;
+    width: 100%;
+    margin: 10px 0px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.input-container{
+    position: relative;  
+}
+
+.input-container i{
+position: absolute;
+top: 50%;
+left: 10px;
+transform: translateY(-50%);
+pointer-events: none;
+color: #888;
+}
+
+.btn {
+   
+    background: #57C785;
+    font-family: "Montserrat";
+    text-align: center;
+    width: 100%;
+    padding: 12px 26px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    color: #fff;
+}
+
+
+.btn:hover {
+    background: #4db174;
+    cursor: pointer;
+  }
+  
+  .btn:focus {
+    outline: 2px solid #2A7B9B;
+  }
+
+
+.sucess-message{
+    display: block;
+    text-align: center;
+    margin: 5px 0px;
+    padding: 10px;
+    
+}
+
+input:valid ~ .sucess-message{
+    display: block;
+}
+
+
+@media (max-width: 600px) {
+    .container{
+        flex-direction: column;
+        width:100%;
+        padding: 24px;
+        margin: 10px 24px;
+    }
+    
+    .input-container{
+       position: relative;
+       width: 100%;
+       
+}
+}
