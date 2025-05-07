@@ -15,7 +15,7 @@
 <body>
     
     <div class="container">
-      <form action="/reset-password" method="post" class="form" autocomplete="on">
+      <form action="/reset-password" method="post" id="resetForm" autocomplete="on">
         <div class = "title">
           <h2>Reset Password</h2>
            <hr>
@@ -23,17 +23,17 @@
         
          <div class="form-class">
            <p>Enter your email address below and we'll send you a link to reset your password.</p>
-           <label for="email">Email Address:</label><br>
+           <label for="emailInput">Email Address:</label><br>
 
            <div class="input-container">
             <i class="fa-solid fa-user"></i>
-             <input type="email" name="email-reset" id="email" placeholder="Email address" required><br>
+             <input type="email" name="email-reset" id="emailInput" placeholder="Email address" required><br>
           </div>
            <button type="submit" class="btn">Send Reset Link</button>
-           <div class="sucess-message">✅A rest link will be send to your email</div>
+           <div id="message" class="sucess-message"></div>
         </div>
     </form>
 </div>
-
+<script src="reset.js"></script>
 </body>
 </html>
