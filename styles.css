@@ -10,7 +10,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0px;
+    margin: 0;
     padding: 20px;
     background-color: #f5f5f5;
     color: var(--text-dark);
@@ -25,16 +25,48 @@ body {
 }
 
 .menu-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
+    position: relative;
+    width: 100%;
+    height: 320px;
+    perspective: 1000px;
+    cursor: pointer;
 }
 
-.menu-card:hover {
-    transform: translateY(-17px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+.menu-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+.card-front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    text-align: center;
 }
 
 .card-image {
@@ -54,7 +86,6 @@ body {
     margin: 0 0 8px 0;
     text-align: center;
     color: var(--primary);
-
 }
 
 .card-price {
@@ -65,16 +96,33 @@ body {
     margin: 0;
 }
 
-/* Fallback for image */
-.card-image.fallback {
-    background-color: #e0e0e0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #888;
+.card-back .card-content {
+    background-color: #fdfdfd;
+    border: 1px solid var(--highlight);
+    border-radius: 10px;
+    padding: 20px;
+    color: var(--text-dark);
+    box-shadow: var(--shadow);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-height: 100%;
+    overflow-y: auto;
 }
 
-/* Responsive adjustments */
+.card-back .card-content strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: var(--primary);
+}
+
+.card-back .card-content ul {
+    padding-left: 20px;
+    list-style-type: square;
+    color: var(--primary);
+}
+
+/* Responsive */
 @media (max-width: 900px) {
     .menu-container {
         grid-template-columns: repeat(2, 1fr);
@@ -85,7 +133,7 @@ body {
     .menu-container {
         grid-template-columns: 1fr;
     }
-    
+
     .menu-card {
         max-width: 350px;
         margin: 0 auto;
