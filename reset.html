@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reset Password</title>
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="reset-container">
+    <div class="reset-card">
+
+      <h2 class="reset-title">Reset Password</h2>
+      <p class="reset-subtitle">Enter your email to receive a reset link</p>
+
+      <form id="resetForm" class="reset-form" action="" method="POST">
+        <div class="form-group input-with-icon" id="emailGroup">
+          <i class="fa-solid fa-envelope"></i>
+          <input type="email" id="emailInput" name="email" placeholder="Email Address" required />
+        </div>
+
+        <button type="submit" class="reset-button">
+          <i class="fa-solid fa-paper-plane"></i> Send Reset Link
+        </button>
+
+        <p id="message" class="error-message"></p>
+      </form>
+
+    </div>
+  </div>
+  <script src="reset.js"></script>
+</body>
+</html>
