@@ -1,106 +1,159 @@
-body{
-    background: linear-gradient(90deg, #2A7B9B 0%, #57C785 50%, #EDDD53 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; 
-    margin: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
 }
 
-
-.container{
-    display: flex;
-    width: 90%;
-    max-width: 325px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    padding: 32px;
-    font-family: "Open Sans";
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2A7B9B 0%, #57C785 50%, #EDDD53 100%);
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-.title{
-    text-align: center; 
-}
-.container p{
-    margin: 10px 0;
-}
-.form-class label{
-    margin: 10px 0;
-    font-size: 16px;
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.container input{
-    text-align: left;
-    padding:10px 10px 10px 35px;
-    font-size: 16px;
-    width: 100%;
-    margin: 10px 0px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-.input-container{
-    position: relative;  
+.reset-container {
+  width: 100%;
+  max-width: 400px;
+  perspective: 1000px;
 }
 
-.input-container i{
-position: absolute;
-top: 50%;
-left: 10px;
-transform: translateY(-50%);
-pointer-events: none;
-color: #888;
+.reset-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
 }
 
-.btn {
-   
-    background: #57C785;
-    font-family: "Montserrat";
-    text-align: center;
-    width: 100%;
-    padding: 12px 26px;
-    margin: 10px 0;
-    font-size: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 4px;
-    color: #fff;
+.reset-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
+.reset-title {
+  color: #2A7B9B;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 28px;
+}
 
-.btn:hover {
-    background: #4db174;
-    cursor: pointer;
+.reset-subtitle {
+  color: #666;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.reset-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.input-with-icon i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #57C785;
+  font-size: 16px;
+}
+
+.input-with-icon input {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 15px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.input-with-icon input:focus {
+  outline: none;
+  border-color: #57C785;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(87, 199, 133, 0.2);
+}
+
+.reset-button {
+  background: linear-gradient(to right, #2A7B9B, #57C785);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(42, 123, 155, 0.3);
+  transition: all 0.4s ease;
+}
+
+.reset-button:hover {
+  background: linear-gradient(to right, #57C785, #2A7B9B);
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(42, 123, 155, 0.4);
+}
+
+.error-message {
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.error-message.visible {
+  opacity: 1;
+}
+
+.error-message.success {
+  background: rgba(87, 199, 133, 0.1);
+  color: #2A7B9B;
+}
+
+.error-message.error {
+  background: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+}
+
+@media (max-width: 480px) {
+  .reset-card {
+    padding: 30px 20px;
+    backdrop-filter: none;
   }
-  
-  .btn:focus {
-    outline: 2px solid #2A7B9B;
+
+  .reset-title {
+    font-size: 24px;
   }
 
-
-.sucess-message{
-    display: block;
-    text-align: center;
-    margin: 5px 0px;
-    padding: 10px;
-    
-}
-
-input:valid ~ .sucess-message{
-    display: block;
-}
-
-
-@media (max-width: 600px) {
-    .container{
-        flex-direction: column;
-        width:100%;
-        padding: 24px;
-        margin: 10px 24px;
-    }
-    
-    .input-container{
-       position: relative;
-       width: 100%;
-       
-}
+  .reset-button {
+    font-size: 15px;
+    padding: 14px;
+  }
 }
